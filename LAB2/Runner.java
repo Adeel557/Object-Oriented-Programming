@@ -1,54 +1,53 @@
 package LAB2;
 
-class Point {
+class Rectangle {
 
-    private int x;
-    private int y;
+    private int length, width;
 
-    public Point() {
-        x = 1;
-        y = 2;
+    public Rectangle() {
+        length = 5;
+        width = 2;
     }
 
-    public Point(int a, int b) {
-        x = a;
-        y = b;
+    public Rectangle(int l, int w) {
+        length = l;
+        width = w;
     }
 
-    public void setX(int a) {
-        x = a;
+    public void setLength(int l) //sets the value of length
+    {
+        length = l;
     }
 
-    public void setY(int b) {
-        y = b;
+    public void setWidth(int w)
+    {
+        width = w;
     }
 
-
-    public void display() {
-        System.out.println("x coordinate = " + x + " y coordinate = " + y);
+    public int getLength() //gets the value of length
+    {
+        return length;
     }
 
-    public void movePoint(int a, int b) {
-        x = x + a;
-        y = y + b;
-        System.out.println("x coordinate after moving = " + x + " y coordinate after moving = " + y);
+    public int getWidth() //gets the value of width
+    {
+        return width;
     }
 
-
+    public int area() {
+        return (length * width);
+    }
 }
+
 public class Runner {
 
-    public static void main(String args[]) {
-
-        Point p1 = new Point();
-        p1.display();
-        p1.movePoint(2, 3);
-
-        Point p2 = new Point();
-        p2.display();
-        p2.movePoint(5, 8);
-
-
+    public static void main() {
+        Rectangle rect1 = new Rectangle();
+        System.out.println("Area of rec1= " + rect1.area());
+        Rectangle rect2= new Rectangle();
+        rect2.setLength(5);
+        rect2.setWidth(10);
+        System.out.println("Area of Rectangle is: " + rect2.area());
+                System.out.println("Width of Rectangle is: " + rect2.getWidth());
     }
-
 }
